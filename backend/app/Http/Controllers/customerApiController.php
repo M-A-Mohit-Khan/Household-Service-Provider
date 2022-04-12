@@ -12,13 +12,13 @@ class customerApiController extends Controller
 
     public function getAllCustomer(){
         
-        $customer = c::where('usertype','customer')->get();
+        $customer = alluser::where('usertype','customer')->get();
 
         return response($customer, 200);
     }
 
     public function getOneCustomer($id){
-        $customer = c::where('usertype','customer')->where('id',$id)->first();
+        $customer = alluser::where('usertype','customer')->where('id',$id)->first();
         return response($customer, 200);
     }
 
@@ -38,13 +38,13 @@ class customerApiController extends Controller
         $customer->dob = $req->dob;
         $customer->save();
 
-        return response($c, 200);
+        return response($alluser, 200);
     }
 
     public function add(Request $req)
     {
         $alluser = new alluser;
-        $alluser->id = $req->id;
+        // $alluser->id = $req->id;
         $alluser->password = $req->password;
         $alluser->email = $req->email;
         $alluser->phone = $req->phone;
@@ -55,7 +55,7 @@ class customerApiController extends Controller
         $alluser->save();
         
         $customer = new customer;
-        $customer->id = $req->id;
+        // $customer->id = $req->id;
         $customer->username = $req->username;
         $customer->password = $req->password;
         $customer->email = $req->email;
@@ -68,6 +68,14 @@ class customerApiController extends Controller
         return response($alluser, 200);
     }
 
+    public function delete($id)
+    {
+        $customer = alluser::where('id', $id)->first();
+       
+        $found = $customer->delete();
+        if ($found) return response("Deleted successfully", 200);
+        return response("Delete failed", 404);
+    }
 
 
 }
