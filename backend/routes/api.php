@@ -22,4 +22,5 @@ Route::get('/customer/getall',[customerApiController::class, 'getAllCustomer']);
 Route::get('/customer/getById/{id}',[customerApiController::class, 'getOneCustomer']);
 Route::post('/customer/edit',[customerApiController::class, 'edit']);
 Route::post('/customer/add',[customerApiController::class, 'add']);
+Route::post('/customer/delete/{id}',[customerApiController::class, 'delete']);
 #Route::get('/courses', [CourseApiController::class, 'getAll']);
