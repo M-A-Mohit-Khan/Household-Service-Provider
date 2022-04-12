@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\customerApiController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/customer/getall',[customerApiController::class, 'getAllCustomer']);
+Route::get('/customer/getById/{id}',[customerApiController::class, 'getOneCustomer']);
+Route::post('/customer/edit',[customerApiController::class, 'edit']);
+Route::post('/customer/add',[customerApiController::class, 'add']);
+#Route::get('/courses', [CourseApiController::class, 'getAll']);
