@@ -76,6 +76,6 @@ class customerApiController extends Controller
         if ($found) return response("Deleted successfully", 200);
         return response("Delete failed", 404);
     }
-
+//customer controller
 
 }
