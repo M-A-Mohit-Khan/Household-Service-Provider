@@ -99,4 +99,27 @@ public function order(Request $req)
     return response($order, 200);
 
 }
+public function orderCancel($id)
+    {
+        $order = order::where('id', $id)->first();
+       
+        $found = $order->delete();
+        if ($found) return response("Order Canceled", 200);
+        return response("cancellation failed", 404);
+    }
+
+public function orderedit(Request $req)
+{
+    $order = order::where('id',$req->$id)->first();
+    // $alluser->id = $req->id;
+    $order->customer_name = $req->customer_name;
+    $order->list = $req->list;
+    $order->amount = $req->amount;
+    $order->branch = $req->branch;
+    $order->address = $req->address;
+    $order->status = "pending";
+    $order->save();
+    return response($order, 200);
+
+}
 }

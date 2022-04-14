@@ -25,5 +25,8 @@ Route::post('/customer/add',[customerApiController::class, 'add']);
 Route::post('/customer/delete/{id}',[customerApiController::class, 'delete']);
 Route::get('/customer/orderlist',[customerApiController::class, 'orderlist']);
 Route::post('/customer/order',[customerApiController::class, 'order']);
+Route::post('/customer/orderCancel/{id}',[customerApiController::class, 'orderCancel']);
+Route::post('/customer/orderedit',[customerApiController::class, 'orderedit']);
+
 
 #Route::get('/courses', [CourseApiController::class, 'getAll']);
