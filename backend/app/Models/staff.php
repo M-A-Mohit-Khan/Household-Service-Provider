@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class transfer_application extends Model
+class staff extends Model
 {
-    //transfer_application
     use HasFactory;
     public $timestamps=false;
-    
+    protected $table='staffs';
 }
