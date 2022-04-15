@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class transfer_application extends Model
 {
+    //transfer_application
     use HasFactory;
     public $timestamps=false;
-    //ab
+    
 }
