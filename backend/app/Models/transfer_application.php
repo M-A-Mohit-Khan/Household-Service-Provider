@@ -9,4 +9,5 @@ class transfer_application extends Model
 {
     use HasFactory;
     public $timestamps=false;
+    //ab
 }
