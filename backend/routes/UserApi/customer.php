@@ -18,3 +18,13 @@ use App\Http\Controllers\customerApiController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::get('/customer/getall',[customerApiController::class, 'getAllCustomer']);
+// Route::get('/customer/getById/{id}',[customerApiController::class, 'getOneCustomer']);
+// Route::post('/customer/edit',[customerApiController::class, 'edit']);
+// Route::post('/customer/add',[customerApiController::class, 'add']);
+// Route::post('/customer/delete/{id}',[customerApiController::class, 'delete']);
+// Route::get('/customer/orderlist',[customerApiController::class, 'orderlist']);
+// Route::post('/customer/order',[customerApiController::class, 'order']);
+// Route::post('/customer/orderCancel/{id}',[customerApiController::class, 'orderCancel']);
+// Route::post('/customer/orderedit',[customerApiController::class, 'orderedit']);

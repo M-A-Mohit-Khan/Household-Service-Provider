@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\sendMail;
 use App\Models\alluser;
 use App\Models\customer;
 use App\Models\order;
@@ -111,7 +112,7 @@ public function orderCancel($id)
 public function orderedit(Request $req)
 {
     $order = order::where('id',$req->$id)->first();
-    // $alluser->id = $req->id;
+    //$order->id = $req->id;
     $order->customer_name = $req->customer_name;
     $order->list = $req->list;
     $order->amount = $req->amount;
@@ -122,4 +123,13 @@ public function orderedit(Request $req)
     return response($order, 200);
 
 }
+
+public function mailSend()
+{
+    $subject="Testing Mail";
+    $body="This is a testing mail";
+    Mail::to('tanvir.ahmed@aiub.edu')->send(new sendMail($subject,$body));
+    return "Here";
+}
+
 }
