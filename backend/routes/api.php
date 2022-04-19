@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\customerApiController;
+use App\Http\Controllers\staffApiController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,3 +31,5 @@ Route::post('/customer/orderedit',[customerApiController::class, 'orderedit']);
 
 
 #Route::get('/courses', [CourseApiController::class, 'getAll']);
+
+
